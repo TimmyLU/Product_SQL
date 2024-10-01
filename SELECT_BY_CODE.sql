@@ -8,7 +8,7 @@ SELECT
     pd.failure_reason,
     pd.troubleshooting
 FROM 
-    products p
+    products as p
 LEFT JOIN 
     products_error pd ON p.product_code = pd.product_code
 WHERE 
