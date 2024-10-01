@@ -1,5 +1,6 @@
 SELECT 
     p.product_name,
+    p.product_code,
     pd.failure_condition,
     pd.failure_reason,
     pd.troubleshooting
