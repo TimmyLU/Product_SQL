@@ -1,10 +1,15 @@
 # 在 products_error 表中插入對應的資料
 # 模板 ('product_code', '情況 : ......', '原因 : ......', '排除 : ........');
 INSERT INTO
-	products_error (product_code, failure_condition, failure_reason, troubleshooting)
+	products_error (
+		product_code,
+        failure_condition,
+        failure_reason,
+        troubleshooting
+	)
 VALUES
-	('CODE113', '情況 : 沒有輸出', '原因 : HDMI線接觸不良', '排除 : 更換新HDMI'),
-    ('CODE114', '情況 : LED異常', '原因 : LED故障', '排除 : 更換機器'),
-    ('CODE115', '情況 : TEAMS打不開', '原因 : 韌體過時', '排除 : 更新韌體'),
-    ('CODE116', '情況 : 會議中沒有聲音', '原因 : 機器選項設定錯誤', '排除 : 更變設定');
+	('CODE117', '情況 : 麥克風沒有聲音', '原因 : HUB故障', '排除 : 更換新HUB'),
+    ('CODE118', '情況 : 影像輸出斷斷續續', '原因 : 延伸器故障', '排除 : 更換延伸器'),
+    ('CODE119', '情況 : lifesize畫面異常', '原因 : 長時間開機', '排除 : 重新開機'),
+    ('CODE120', '情況 : 遠端看不到畫面', '原因 : 視訊鏡頭故障', '排除 : 送修');
     
