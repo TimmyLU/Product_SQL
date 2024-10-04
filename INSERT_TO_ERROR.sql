@@ -9,4 +9,4 @@ INSERT INTO
         troubleshooting
 	)
 VALUES
-	('CODE130', '情況 : 麥克風沒有聲音', '原因 : HUB故障', '排除 : 更換新HUB');
+	('CODE123', '情況 : 聲音變很小', '原因 : 喇叭故障', '排除 : 送修');

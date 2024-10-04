@@ -1,3 +1,4 @@
+# 列出特定商品的紀錄包含故障
 USE product_test;
 SELECT 
     p.product_name,

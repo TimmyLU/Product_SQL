@@ -1,16 +1,21 @@
 USE product_test;
-#select * from products;
-
-/*										# 找特定ID 改 product_code
-UPDATE product_test.products
-SET product_code = 'CODE348'
-WHERE id = '5';
+# 依照id更新故障原因和排除方式, 且自動新增完成時間
+/*
+UPDATE
+	products_error
+SET 
+    failure_reason = '故障原因',
+    troubleshooting = '故障排除步驟',
+    event_end_time = NOW()
+WHERE 
+    id = '';
 */
-/*										# 找特定ID 改 desription
-UPDATE product_test.products
-SET description = 
-'故障事件 : .........................\n
-故障原因 : .........................\n
-解決方式 : .........................'
-WHERE id = 6;
+# 依照商品代碼更新備註
+/*
+UPDATE
+	products
+SET
+	description = ''
+WHERE
+	product_code = '';
 */
