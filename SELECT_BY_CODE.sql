@@ -1,3 +1,4 @@
+USE product_test;
 SELECT 
     p.product_name,
     p.purchase_company,
@@ -12,5 +13,5 @@ FROM
 LEFT JOIN 
     products_error pd ON p.product_code = pd.product_code
 WHERE 
-    p.product_code = 'CODE115';
+    p.product_code = 'CODE121';
     #p.purchase_company = '公司X';

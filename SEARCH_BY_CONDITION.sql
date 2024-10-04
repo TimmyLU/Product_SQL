@@ -1,3 +1,4 @@
+USE product_test;
 SELECT 
     p.product_name,
     p.product_code,

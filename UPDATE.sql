@@ -1,3 +1,4 @@
+USE product_test;
 #select * from products;
 
 /*										# 找特定ID 改 product_code
