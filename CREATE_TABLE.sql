@@ -4,7 +4,8 @@
 #SET SQL_SAFE_UPDATES = 0;							 # 關閉安全設置
 #SET SQL_SAFE_UPDATES = 1;							 # 開啟安全設置
 USE product_test;
-#select * from products;
+
+# 主TABLE 記錄商品出售, 且確保商品代碼唯一
 /*
 CREATE TABLE products (
     id INT AUTO_INCREMENT PRIMARY KEY,				 # ID		(唯一 & 不可重複)
@@ -16,15 +17,20 @@ CREATE TABLE products (
     description TEXT,			                     # 商品備註
     UNIQUE (product_code)							 # 確保唯一
 );
-
+*/
+# 副TABLE, 用於紀錄故障商品情況, 商品代碼需出現在主TABLE中才能寫入, 此表中商品代碼可重複出現
+/*
 CREATE TABLE products_error (
     id INT AUTO_INCREMENT PRIMARY KEY,               # ID (唯一 & 不可重複)
     product_code VARCHAR(100) NOT NULL,              # 商品代碼 (對應 products)
     failure_condition TEXT,                          # 故障情況
     failure_reason TEXT,							 # 故障原因
 	troubleshooting TEXT,							 # 故障排除
+    event_start_time DATETIME DEFAULT now(),		 # 事件起始時間 (自動設置為當前時間)
+    event_end_time DATETIME,						 # 事件完成時間 (需手動添加)
     FOREIGN KEY
 		(product_code)
     REFERENCES
-		products(product_code)				 		 # 設置外鍵 (product_code 對應 products表)
+		products(product_code)				 		 # 設置外鍵 (product_code對應products表, 可重複)
 );
+*/

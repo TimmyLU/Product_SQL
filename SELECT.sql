@@ -1,3 +1,4 @@
+USE product_test;
 select * from products;										# 全部列出
 #SELECT * FROM products_error;
 /*
