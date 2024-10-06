@@ -40,7 +40,7 @@ CREATE TABLE product_replacements (
     id INT AUTO_INCREMENT PRIMARY KEY,               # 唯一ID
     original_product_code VARCHAR(100) NOT NULL,     # 原商品代碼
     new_product_code VARCHAR(100) NOT NULL,          # 新商品代碼
-    replacement_date DATETIME DEFAULT now(),         # 換貨日期 (自動設置當前時間)
+    replacement_date DATETIME NOT NULL,              # 換貨日期 (必須手動指定)
     reason TEXT,                                     # 換貨原因
     FOREIGN KEY (original_product_code) REFERENCES products(product_code),
     FOREIGN KEY (new_product_code) REFERENCES products(product_code)
