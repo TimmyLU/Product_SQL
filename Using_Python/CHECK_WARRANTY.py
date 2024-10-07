@@ -9,6 +9,7 @@ conn = mysql.connector.connect(
 
 cursor = conn.cursor()
 
+print("----------輸入產品代碼確認保固期限----------")
 product_code = input("請輸入產品代碼: ")
 
 # TEST INPUT
