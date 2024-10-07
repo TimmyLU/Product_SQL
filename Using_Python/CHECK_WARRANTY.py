@@ -1,18 +1,18 @@
 import mysql.connector
 
 conn = mysql.connector.connect(
-    host = '127.0.0.1',
-    user = 'root',
-    password = '1234',
-    database = 'product_test'
+    host='127.0.0.1',
+    user='root',
+    password='1234',
+    database='product_test'
 )
 
 cursor = conn.cursor()
-cursor.execute("USE product_test")
 
 product_code = input("請輸入產品代碼: ")
-#
-#
+
+# TEST INPUT
+#print(f"輸入的產品代碼: {product_code}")
 
 query = """
 SELECT
@@ -30,17 +30,27 @@ SELECT
 FROM
     products
 WHERE
-    product_code = '%s';
+    product_code = %s;
 """
-cursor.execute(query, (product_code))
+
+cursor.execute(query, (product_code,))
 
 results = cursor.fetchall()
 
 if not results:
-    print("沒有找到此代碼的產品")
+    print("沒有找到符合條件的資料。")
 else:
     for row in results:
-        print(row)
+        print("-" * 40)
+        print("產品代碼:", row[0])
+        print("產品名稱:", row[1])
+        print("購買日期:", row[2])
+        print("保固期(月):", row[3])
+        print("保固到期日:", row[4])
+        print("當前時間:", row[5])
+        print("保固狀態:", row[6])
+        print("-" * 40)
 
 cursor.close()
 conn.close()
+
