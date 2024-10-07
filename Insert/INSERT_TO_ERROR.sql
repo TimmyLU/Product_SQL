@@ -9,5 +9,4 @@ INSERT INTO
         troubleshooting
 	)
 VALUES
-
 	('CODE123', '情況 : 聲音變很小', '原因 : 喇叭故障', '排除 : 送修');

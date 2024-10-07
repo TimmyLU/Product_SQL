@@ -3,7 +3,7 @@
 #CREATE DATABASE product_test;						 # 創一個資料庫名為 DATABASE
 #SET SQL_SAFE_UPDATES = 0;							 # 關閉安全設置
 #SET SQL_SAFE_UPDATES = 1;							 # 開啟安全設置
-USE product_test;
+#USE product_test;
 
 # 主TABLE 記錄商品出售, 且確保商品代碼唯一
 /*
@@ -36,13 +36,15 @@ CREATE TABLE products_error (
 */
 # 用於紀錄換貨商品的原本代碼跟新代碼以及原因，兩個代碼需出現在products中才能寫入
 /*
-CREATE TABLE product_replacements (
+CREATE TABLE products_replacements (
     id INT AUTO_INCREMENT PRIMARY KEY,               # 唯一ID
     original_product_code VARCHAR(100) NOT NULL,     # 原商品代碼
     new_product_code VARCHAR(100) NOT NULL,          # 新商品代碼
     replacement_date DATETIME NOT NULL,              # 換貨日期 (必須手動指定)
     reason TEXT,                                     # 換貨原因
-    FOREIGN KEY (original_product_code) REFERENCES products(product_code),
-    FOREIGN KEY (new_product_code) REFERENCES products(product_code)
+    FOREIGN KEY
+		(original_product_code) REFERENCES products(product_code),
+    FOREIGN KEY
+		(new_product_code) REFERENCES products(product_code)
 );
 */
