@@ -35,7 +35,7 @@ CREATE TABLE products_error (
 );
 */
 # 用於紀錄換貨商品的原本代碼跟新代碼以及原因，兩個代碼需出現在products中才能寫入
-/*
+
 CREATE TABLE products_replacements (
     id INT AUTO_INCREMENT PRIMARY KEY,               # 唯一ID
     original_product_code VARCHAR(100) NOT NULL,     # 原商品代碼
@@ -47,4 +47,3 @@ CREATE TABLE products_replacements (
     FOREIGN KEY
 		(new_product_code) REFERENCES products(product_code)
 );
-*/
