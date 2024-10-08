@@ -46,4 +46,6 @@ CREATE TABLE products_replacements (
 		(original_product_code) REFERENCES products(product_code),
     FOREIGN KEY
 		(new_product_code) REFERENCES products(product_code)
+
 );
+
