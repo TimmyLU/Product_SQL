@@ -1,6 +1,6 @@
 #USE product_test;
-#select * from products;										# 全部列出
-SELECT * FROM products_error;
+select * from products;										# 全部列出
+#SELECT * FROM products_error;
 /*
 select product form products
 WHERE product_name = '商品A'								# 一般查找
