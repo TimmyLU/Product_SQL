@@ -17,7 +17,7 @@ SET SQL_SAFE_UPDATES = 1;
 USE product_test;
 
 # 主TABLE 記錄商品出售，且確保商品代碼唯一
-/*
+
 CREATE TABLE products (
     id INT AUTO_INCREMENT PRIMARY KEY,               # ID (唯一 & 不可重複)
     product_name VARCHAR(255) NOT NULL,              # 商品名稱 (商品名稱)
@@ -28,10 +28,10 @@ CREATE TABLE products (
     description TEXT,                                 # 商品備註
     UNIQUE (product_code)                             # 確保唯一
 );
-*/
+
 
 # 副TABLE，用於紀錄故障商品情況，商品代碼需出現在主TABLE中才能寫入，此表中商品代碼可重複出現
-/*
+
 CREATE TABLE products_error (
     id INT AUTO_INCREMENT PRIMARY KEY,               # ID (唯一 & 不可重複)
     product_code VARCHAR(100) NOT NULL,              # 商品代碼 (對應 products)
@@ -42,9 +42,10 @@ CREATE TABLE products_error (
     event_end_time DATETIME,                          # 事件完成時間 (需手動添加)
     FOREIGN KEY (product_code) REFERENCES products(product_code)  # 設置外鍵 (product_code對應products表, 可重複)
 );
-*/
+
 
 # 用於紀錄換貨商品的原本代碼跟新代碼以及原因，兩個代碼需出現在products中才能寫入
+
 CREATE TABLE products_replacements (
     id INT AUTO_INCREMENT PRIMARY KEY,               # 唯一ID
     original_product_code VARCHAR(100) NOT NULL,     # 原商品代碼
