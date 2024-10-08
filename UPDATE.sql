@@ -1,4 +1,5 @@
-USE product_test;
+#USE product_test;
+#drop table product_replacements
 # 依照id更新故障原因和排除方式, 且自動新增完成時間
 /*
 UPDATE
