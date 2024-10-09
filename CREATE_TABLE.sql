@@ -26,7 +26,6 @@ CREATE TABLE products (
     purchase_date DATETIME NOT NULL,                  # 售出日期 (YYYY-MM-DD HH-MM-SS)
     warranty_period INT NOT NULL,                     # 保固時長 (單位為月)
     description TEXT,                                 # 商品備註
-    UNIQUE (product_code)                             # 確保唯一
 );
 
 
